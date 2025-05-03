@@ -711,6 +711,8 @@ int handle__connect(struct mosquitto *context)
 				goto handle_connect_error;
 			}
 		}
+
+		log__printf(NULL, MOSQ_LOG_NOTICE, "PASSWORD: %s", password);
 	}
 
 	if(context->in_packet.pos != context->in_packet.remaining_length){
